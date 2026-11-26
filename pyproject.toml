@@ -1,0 +1,25 @@
+[project]
+name = "ft-quantum"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Diego Vargas", email = "divaro_@hotmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "flake8>=7.5.0",
+    "matplotlib>=3.11.2",
+    "mypy>=2.4.1",
+    "pylatexenc>=2.11",
+    "qiskit>=2.6.2",
+    "qiskit-aer>=0.18.4",
+    "qiskit-ibm-runtime>=0.52.1",
+]
+
+[project.scripts]
+ft-quantum = "ft_quantum:main"
+
+[build-system]
+requires = ["uv_build>=0.13.9,<0.14.0"]
+build-backend = "uv_build"
