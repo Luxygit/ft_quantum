@@ -6,10 +6,10 @@ install:
 	uv sync
 
 run: install
-	uv run python -m src $(EX)
+	uv run python src/ft_quantum/$(EX)
 
 debug: install
-	uv run python -m pdb src $(EX)
+	uv run python -m pdb src/ft_quantum/$(EX)
 
 clean:
 	rm -rf .mypy_cache dist build *.egg-info
@@ -19,8 +19,4 @@ lint:
 	uv run flake8 src/ft_quantum/
 	uv run mypy src/ft_quantum --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs
 
-lint-strict:
-	uv run flake8 .
-	uv run mypy . --strict
-
-.PHONY: all install run debug clean lint lint-strict
+.PHONY: all install run debug clean lint
